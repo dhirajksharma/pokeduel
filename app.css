@@ -1,0 +1,32 @@
+h1,h2{
+    text-align: center;
+}
+
+#player1{
+    display: inline-block;
+}
+
+#player2{
+    display: inline-block;
+}
+
+#versus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.pokemons {
+    display: inline-block;
+    border-width: 0.01em;
+    border-color: #efefef;
+    border-style: solid;
+    box-sizing: border-box;
+}
+    
+
+#container{
+    text-align: center;
+}
