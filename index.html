@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -16,17 +17,22 @@
     <section id="versus">
         <section id="player1">
             <h2>Player 1</h2>
+            <div class="hbar"><div id="player1health"></div></div>
         </section>
         <img src="res/versus.png" width="120px" height="120px">
         <section id="player2">
             <h2>Player 2</h2>
+            <div class="hbar"><div id="player2health"></div></div>
         </section>
     </section>
 
-    <section id="container">
-        <button>Reset</button>
+    <section id="deck">
+        <button id="operate"></button>
         <h3>Select Your Pokemons</h3>
     </section>
+    <footer>
+        <p id='foot'>All the content belongs to their respective copyright holders.<br>This page only reuses content available on the internet for educational purposes.</p>
+    </footer>
     <script src="app.js"></script>
 </body>
 
