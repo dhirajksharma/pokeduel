@@ -67,7 +67,7 @@ function pokemonAssign(img,player)
 const player1health=document.querySelector('#player1health');
 const player2health=document.querySelector('#player2health');
 let attackcount=0;
-function attack(playerh,pbut,opbut)
+function attack(playerh,pbut,opbut,n)
 {
     if(attackcount<=5)
     {
@@ -86,7 +86,7 @@ function attack(playerh,pbut,opbut)
             button.disabled=false;
         }
         attackcount+=1;
-    
+        banner.innerHTML=`Player ${n} attack`;
         let p1h=parseInt(player1health.alt);
         let p2h=parseInt(player2health.alt);
         if(attackcount==6 || p1h==0 || p2h==0)
@@ -118,20 +118,22 @@ function duel()
 {
     assignmoves();
     banner.innerHTML='The Duel Begins';
+    operatebutton.innerHTML='Reset';
+    operatebutton.addEventListener('click',reset);
     const p1but=document.querySelectorAll('#player1 button');
     const p2but=document.querySelectorAll('#player2 button');
 
     for(let button of p1but)
     {
         button.addEventListener('click',function(){
-            attack(player2health,p1but,p2but);
+            attack(player2health,p1but,p2but,2);
         });
     }
 
     for(let button of p2but)
     {
         button.addEventListener('click',function(){
-            attack(player1health,p2but,p1but);
+            attack(player1health,p2but,p1but,1);
         });
     }
     operatebutton.removeEventListener('click',duel);
@@ -144,8 +146,8 @@ function declarewinner(p1h,p2h)
         banner.innerHTML='Player 2 wins';
     else
         banner.innerHTML='Draw';
-    operatebutton.innerHTML='Reset';
-    operatebutton.addEventListener('click',reset);
+    // operatebutton.innerHTML='Reset';
+    // operatebutton.addEventListener('click',reset);
 }
 
 function reset()
@@ -201,9 +203,11 @@ for(let pokemon of pokemons)
             pokemonAssign(pokemon,player2);
             count+=1;
             window.scrollTo({top:0,behavior:"smooth"});
+            setTimeout(function(){
             operatebutton.innerHTML='Begin'
             operatebutton.style.display='inline-block';
             operatebutton.addEventListener('click',duel);
+            }, 1500);
         }
     }
     );
