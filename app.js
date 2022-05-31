@@ -102,6 +102,7 @@ function attack(playerh,pbut,opbut,n)
 
 function assignmoves()
 {
+    try{
     const player1movelist=document.querySelector(`#movesofpokemon${player1pokemonid}`);
     const player2movelist=document.querySelector(`#movesofpokemon${player2pokemonid}`);
     player1movelist.style.display='flex';
@@ -111,7 +112,10 @@ function assignmoves()
     document.querySelectorAll('.hbar')[0].style.display='block';
     document.querySelectorAll('.hbar')[1].style.display='block';
     player1health.alt=100;
-    player2health.alt=100;
+    player2health.alt=100;}
+    catch{
+        alert("Unexpected Error! Please refresh page");
+    }
 }
 
 function duel()
