@@ -7,6 +7,51 @@ const player1=document.querySelector('#player1');
 const player2=document.querySelector('#player2');
 const pokemondeck=document.querySelector('#deck');
 
+const info=document.querySelector("#info");
+const ovr=document.querySelector('#overlay');
+const inf=document.querySelector('#infodiv');
+inf.addEventListener('click',function(e){
+    e.stopPropagation();
+})
+
+info.addEventListener('click',function(){
+    ovr.style.display='block';
+    ovr.addEventListener('click',function(){
+        ovr.style.display='none';
+    })
+})
+
+
+
+const dnswitch=document.querySelector("#daynightswitch");
+const r=document.querySelector(":root");
+
+dnswitch.addEventListener('click',function(){
+    if(dnswitch.getAttribute('alt')==="day")
+    {
+        r.style.setProperty('--bodycolor','#39393c');
+        r.style.setProperty('--fontcolor','#ffffff');
+        r.style.setProperty('--footercolor','#fefefe');
+        r.style.setProperty('--linkcolor','yellow');
+        r.style.setProperty('--operateborder','#fbc115');
+        r.style.setProperty('--operateborderhover','#fce82a');
+        dnswitch.setAttribute('src','res/sun.png');
+        dnswitch.setAttribute('alt','night');
+    }
+    else
+    {
+        r.style.setProperty('--bodycolor','#ffffff');
+        r.style.setProperty('--fontcolor','#000000');
+        r.style.setProperty('--footercolor','#rgb(82, 76, 76)');
+        r.style.setProperty('--linkcolor','rgb(64, 64, 180)');
+        r.style.setProperty('--operateborder','rgb(197, 95, 11)');
+        r.style.setProperty('--operateborderhover','rgb(243, 37, 10)');
+        dnswitch.setAttribute('src','res/moon.png');
+        dnswitch.setAttribute('alt','day');
+    }
+})
+
+
 //functions
 
 function seqencegenerator(length,max)

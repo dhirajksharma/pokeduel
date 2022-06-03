@@ -1,3 +1,12 @@
+:root{
+    --bodycolor:#ffffff;
+    --fontcolor:#000000;
+    --footercolor: rgb(82, 76, 76);
+    --operateborder: rgb(197, 95, 11);
+    --operateborderhover: rgb(243, 37, 10);
+    --linkcolor: rgb(64, 64, 180);
+}
+
 @media (min-width: 431px)
 {
     img{
@@ -84,11 +93,88 @@
     }
 }
 
+@media (max-width: 500px)
+{
+    #infodiv{
+        font-size: small;
+    }
+}
+
+body{
+    background-color: var(--bodycolor);
+    color: var(--fontcolor);
+}
+
+.navbutton{
+    width: 30px;
+    height: 30px;
+    font-size: x-large;
+    font-weight: 900;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    background: none;
+    cursor: pointer;
+    border: none;
+    color: var(--fontcolor);
+}
+
+#daynightswitch{
+    width: 20px;
+    height: 20px;
+}
+
+a{
+    color: var(--linkcolor);
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#infodiv{
+    z-index: 1;
+    background-color: var(--bodycolor);
+    width: 70vw;
+    border-radius: 10px;
+    border: 2px solid var(--fontcolor);
+    margin: auto;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+#infodiv div{
+    border-top: 1px solid var(--fontcolor);
+    margin-bottom: 5%;
+}
+
+#overlay{
+    display: none;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    padding-top: 10vh;
+}
 
 h1{
+    display: inline-block;
     text-align: center;
     font-family: 'Libre Baskerville', serif;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
+
 
 h2{
     margin: 10px;
@@ -159,19 +245,20 @@ h3{
     font-size: medium;
     font-weight: 800;
     padding: 0.5em 1.2em;
-    border: 3px solid rgb(197, 95, 11);
+    border: 3px solid var(--operateborder);
     transition: all 0.25s;
+    color: var(--fontcolor);
 }
 
 #operate:hover
 {
-    border: 2px solid rgb(243, 37, 10);
-    box-shadow: 0 0.4em 0.5em -0.4em  rgb(243, 37, 10);
+    border: 2px solid var(--operateborderhover);
+    box-shadow: 0 0.4em 0.5em -0.4em var(--operateborderhover);
     transform: translateY(-0.15em);
     cursor: pointer;
 }
 
-ul{
+#versus ul{
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -224,5 +311,5 @@ ul{
     margin-top: 4rem;
     text-align: center;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(82, 76, 76);
+    color: var(--footercolor);
 }
