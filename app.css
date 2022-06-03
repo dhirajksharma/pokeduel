@@ -96,7 +96,7 @@
 @media (max-width: 500px)
 {
     #infodiv{
-        font-size: small;
+        font-size: 0.9em;
     }
 }
 
