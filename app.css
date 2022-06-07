@@ -103,6 +103,7 @@
 body{
     background-color: var(--bodycolor);
     color: var(--fontcolor);
+    transition: all 500ms ease-out;
 }
 
 .navbutton{

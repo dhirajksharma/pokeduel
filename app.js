@@ -16,8 +16,10 @@ inf.addEventListener('click',function(e){
 
 info.addEventListener('click',function(){
     ovr.style.display='block';
+    document.querySelector('body').style.overflow='hidden';
     ovr.addEventListener('click',function(){
         ovr.style.display='none';
+        document.querySelector('body').style.overflow='auto';
     })
 })
 
