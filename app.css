@@ -100,11 +100,11 @@
     }
 
     #player1{
-        width: 103px;
+        width: 105px;
     }
 
     #player2{
-        width: 103px;
+        width: 105px;
     }
 }
 
@@ -213,14 +213,14 @@ h3{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 180px;
+    min-height: 220px;
 }
 
 #player2{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 180px;
+    min-height: 220px;
 }
 
 
