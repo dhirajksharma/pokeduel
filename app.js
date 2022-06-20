@@ -76,10 +76,14 @@ function pad(number, length) {
     return str;
 }
 
-
+let temp="";
+let poke1moveid="notyetassigned";
+let poke2moveid="notyetassigned";
 function pokemonAssign(img,player)
 {
-    let id=img.id;
+    let id=(img.id==="selected")?temp:img.id;
+    let tep=`movesofpokemon${id+temp}`;
+    temp=id;
     const newImg=document.createElement('img');
     newImg.src=img.src;
     newImg.classList.add('onboard');
@@ -103,8 +107,12 @@ function pokemonAssign(img,player)
              }
          movelist.style.display='none';
          movelist.classList.add('onboard');
-         movelist.setAttribute('id', `movesofpokemon${id}`);
+         movelist.setAttribute('id', tep);
          player.appendChild(movelist);
+         if(poke1moveid==="notyetassigned")
+             poke1moveid=tep;
+         else
+             poke2moveid=tep;
       })
       .catch(err => {
           alert("Unexpected Error! Please Refresh Page");
@@ -149,9 +157,10 @@ function attack(playerh,pbut,opbut,n)
 
 function assignmoves()
 {
+    
     try{
-    const player1movelist=document.querySelector(`#movesofpokemon${player1pokemonid}`);
-    const player2movelist=document.querySelector(`#movesofpokemon${player2pokemonid}`);
+    const player1movelist=document.querySelector(`#${poke1moveid}`);
+    const player2movelist=document.querySelector(`#${poke2moveid}`);
     player1movelist.style.display='flex';
     player2movelist.style.display='flex';
     player1health.style.display='block';
@@ -204,6 +213,9 @@ function declarewinner(p1h,p2h)
 function reset()
 {
     attackcount=0;
+    poke1moveid="notyetassigned";
+    poke2moveid="notyetassigned";
+    temp="";
     player1health.style.display='none';
     player2health.style.display='none';
     document.querySelectorAll('.hbar')[0].style.display='none';
