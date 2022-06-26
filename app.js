@@ -41,6 +41,7 @@ dnswitch.addEventListener('click',function(){
         r.style.setProperty('--fontcolor','#ffffff');
         r.style.setProperty('--footercolor','#fefefe');
         r.style.setProperty('--linkcolor','yellow');
+        r.style.setProperty('--outlinecolor','yellow');
         r.style.setProperty('--operateborder','#fbc115');
         r.style.setProperty('--operateborderhover','#fce82a');
         dnswitch.setAttribute('src','res/sun.png');
@@ -52,6 +53,7 @@ dnswitch.addEventListener('click',function(){
         r.style.setProperty('--fontcolor','#000000');
         r.style.setProperty('--footercolor','#rgb(82, 76, 76)');
         r.style.setProperty('--linkcolor','rgb(64, 64, 180)');
+        r.style.setProperty('--outlinecolor','rgb(255,0,0)');
         r.style.setProperty('--operateborder','rgb(197, 95, 11)');
         r.style.setProperty('--operateborderhover','rgb(243, 37, 10)');
         dnswitch.setAttribute('src','res/moon.png');
