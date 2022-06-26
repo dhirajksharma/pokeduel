@@ -241,6 +241,7 @@ function declarewinner(p1h,p2h)
 
 function reset()
 {
+    document.querySelector('body').style.overflow='auto';
     p1src="";
     p2src="";
     ovr2.style.display="none";
