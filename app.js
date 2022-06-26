@@ -6,7 +6,8 @@ let player2pokemonid;
 const player1=document.querySelector('#player1');
 const player2=document.querySelector('#player2');
 const pokemondeck=document.querySelector('#deck');
-
+const winm=document.querySelector('#winmusic');
+const atkm=document.querySelector('#attackmusic');
 const info=document.querySelector("#info");
 const ovr=document.querySelector('#overlay');
 const inf=document.querySelector('#infodiv');
@@ -126,7 +127,7 @@ function attack(playerh,pbut,opbut,n)
 {
     if(attackcount<=5)
     {
-        
+        atkm.play();
         let curval=parseInt(playerh.alt);
         let rand=Math.floor(Math.random()*25);
         rand=rand>10?rand:rand+5;
@@ -200,6 +201,7 @@ function duel()
 }
 function declarewinner(p1h,p2h)
 {
+    winm.play();
     if(parseInt(p1h)>parseInt(p2h))
         banner.innerHTML='Player 1 wins';
     else if(parseInt(p1h)<parseInt(p2h))
