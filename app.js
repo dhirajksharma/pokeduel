@@ -11,7 +11,12 @@ const atkm=document.querySelector('#attackmusic');
 const info=document.querySelector("#info");
 const ovr=document.querySelector('#overlay');
 const inf=document.querySelector('#infodiv');
+const ovr2=document.querySelector('#overlay2');
+const wind=document.querySelector('#windiv');
 inf.addEventListener('click',function(e){
+    e.stopPropagation();
+})
+wind.addEventListener('click',function(e){
     e.stopPropagation();
 })
 
@@ -80,6 +85,8 @@ function pad(number, length) {
 let temp="";
 let poke1moveid="notyetassigned";
 let poke2moveid="notyetassigned";
+let p1src="";
+let p2src="";
 function pokemonAssign(img,player)
 {
     let id=(img.id==="selected")?temp:img.id;
@@ -87,6 +94,10 @@ function pokemonAssign(img,player)
     temp=id;
     const newImg=document.createElement('img');
     newImg.src=img.src;
+    if(p1src==="")
+        p1src=img.src;
+    else
+        p2src=img.src;
     newImg.classList.add('onboard');
     img.setAttribute('id','selected');
     player.appendChild(newImg);
@@ -145,17 +156,20 @@ function attack(playerh,pbut,opbut,n)
         banner.innerHTML=`Player ${n} attack`;
         let p1h=parseInt(player1health.alt);
         let p2h=parseInt(player2health.alt);
+        function dwc(){
+            declarewinner(p1h,p2h);
+        }
         if(attackcount==6 || p1h==0 || p2h==0)
         {
+            banner.innerHTML="Game Over";
             for(let button of opbut)
             {
                 button.disabled=true;
             }
-            declarewinner(p1h,p2h);
+            setTimeout(dwc,500);
         }
     }
 }
-
 function assignmoves()
 {
     
@@ -202,18 +216,32 @@ function duel()
 function declarewinner(p1h,p2h)
 {
     winm.play();
+    ovr2.style.display='block';
+    document.querySelector('body').style.overflow='hidden';
+    ovr2.addEventListener('click',function(){
+        ovr2.style.display='none';
+        document.querySelector('body').style.overflow='auto';
+    })
+    let banter=document.querySelector('#windiv h2');
+    let banterimg=document.querySelector('#windiv img');
+    let banterbtn=document.querySelector('#windiv button');
     if(parseInt(p1h)>parseInt(p2h))
-        banner.innerHTML='Player 1 wins';
+        {banter.innerHTML='Player 1 wins';
+         banterimg.src=p1src}
     else if(parseInt(p1h)<parseInt(p2h))
-        banner.innerHTML='Player 2 wins';
+        {banter.innerHTML='Player 2 wins';
+        banterimg.src=p2src}
     else
-        banner.innerHTML='Draw';
-    // operatebutton.innerHTML='Reset';
-    // operatebutton.addEventListener('click',reset);
+        {banter.innerHTML='Draw';
+        banterimg.src="res/pokeball.png"}
+    banterbtn.addEventListener('click',reset);
 }
 
 function reset()
 {
+    p1src="";
+    p2src="";
+    ovr2.style.display="none";
     attackcount=0;
     poke1moveid="notyetassigned";
     poke2moveid="notyetassigned";

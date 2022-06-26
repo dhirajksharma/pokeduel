@@ -187,6 +187,41 @@ nav {
     padding-top: 10vh;
 }
 
+#overlay2{
+    display: none;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    padding-top: 10vh;
+}
+
+#windiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    background-color: var(--bodycolor);
+    width: 60vw;
+    max-width: 20em;
+    border-radius: 10px;
+    border: 1px solid var(--fontcolor);
+    margin: 20vh auto;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#windiv img{
+    width: 140px;
+    height: 140px;
+    margin-bottom: 2vh;
+}
+
 h1{
     display: inline-block;
     text-align: center;
@@ -277,7 +312,27 @@ h3{
     transform: translateY(-0.15em);
     cursor: pointer;
 }
+#operate2{
+    
+    background: none;
+    border-radius: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: medium;
+    font-weight: 800;
+    padding: 0.5em 1.2em;
+    border: 3px solid var(--operateborder);
+    transition: all 0.25s;
+    color: var(--fontcolor);
+    margin-bottom: 15px;
+}
 
+#operate2:hover
+{
+    border: 2px solid var(--operateborderhover);
+    box-shadow: 0 0.4em 0.5em -0.4em var(--operateborderhover);
+    transform: translateY(-0.15em);
+    cursor: pointer;
+}
 #versus ul{
     display: flex;
     flex-direction: column;

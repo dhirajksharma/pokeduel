@@ -25,10 +25,11 @@
 </head>
 
 <body>
-    <audio id="attackmusic">
+    <audio id="attackmusic" preload="auto">
         <source src="res/attack.mp3" type="audio/mpeg">
+        
     </audio>
-    <audio id="winmusic">
+    <audio id="winmusic" preload="auto">
         <source src="res/winner.mp3" type="audio/mpeg">
     </audio>
     <nav>
@@ -52,6 +53,13 @@
         </div>
     </div>
     </div>
+    <div id="overlay2">
+        <div id="windiv">
+            <h2>Winner</h2>
+            <img src="">
+            <button id="operate2">Play Again</button>
+        </div>
+        </div>
     <section id="versus">
         <section id="player1">
             <h2>Player 1</h2>
