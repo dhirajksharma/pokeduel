@@ -24,7 +24,7 @@ info.addEventListener('click',function(){
     ovr.style.display='block';
     document.querySelector('body').style.overflow='hidden';
     ovr.addEventListener('click',function(){
-        ovr.style.display='none';
+        $('#overlay').fadeOut();
         document.querySelector('body').style.overflow='auto';
     })
 })
@@ -176,10 +176,12 @@ function assignmoves()
 {
     
     try{
-    const player1movelist=document.querySelector(`#${poke1moveid}`);
-    const player2movelist=document.querySelector(`#${poke2moveid}`);
-    player1movelist.style.display='flex';
-    player2movelist.style.display='flex';
+    // const player1movelist=document.querySelector(`#${poke1moveid}`);
+    // const player2movelist=document.querySelector(`#${poke2moveid}`);
+    // player1movelist.style.display='flex';
+    // player2movelist.style.display='flex';
+    $(`#${poke1moveid}`).slideToggle();
+    $(`#${poke2moveid}`).slideToggle();
     player1health.style.display='block';
     player2health.style.display='block';
     document.querySelectorAll('.hbar')[0].style.display='block';
@@ -221,7 +223,7 @@ function declarewinner(p1h,p2h)
     ovr2.style.display='block';
     document.querySelector('body').style.overflow='hidden';
     ovr2.addEventListener('click',function(){
-        ovr2.style.display='none';
+        $('#overlay2').fadeOut();
         document.querySelector('body').style.overflow='auto';
     })
     let banter=document.querySelector('#windiv h2');
@@ -257,12 +259,12 @@ function reset()
     player2health.alt='100';
     player1health.style.width='100%'
     player2health.style.width='100%'
-        const players=document.querySelectorAll('.onboard');
-        for(let poke of players)
-        {
-            poke.remove();
-        }
-        
+        $("ul").slideToggle(function (){
+            this.remove();
+        });
+        $(".onboard").fadeOut(function (){
+            this.remove();
+        });
         banner.innerHTML='Select Your Pokemons';
         const played=document.querySelectorAll('#selected');
         for(let poke of played)
