@@ -1,6 +1,6 @@
 # Pokéduel
 
-A Basic Pokémon game where 2 players choose their Pokémons from a randomly generated group and duel against each other. The Pokémon with more power remaining at the end of the duel, wins! [Link to the game](https://dhirajksharma.github.io/pokeduel)
+A Basic Pokémon game where 2 players choose their Pokémons from a randomly generated group and duel against each other. The Pokémon with more power remaining at the end of the duel, wins! [Link to the game](https://psreact.vercel.app/pokeduel)
 
 ## Version History
 **Version 4**
